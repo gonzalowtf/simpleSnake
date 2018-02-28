@@ -34,12 +34,13 @@ function game() {
     for(var i=0;i<trail.length;i++) {
         ctx.fillRect(trail[i].x*gs,trail[i].y*gs,gs-2,gs-2);
         if(trail[i].x==px && trail[i].y==py) {
-            tail = 5;
+            //tail = 5;
+
         }
     }
     trail.push({x:px,y:py});
     while(trail.length>tail) {
-    trail.shift();
+    	trail.shift();
     }
  
     if(ax==px && ay==py) {
@@ -63,6 +64,9 @@ function keyPush(evt) {
             break;
         case 40:
             xv=0;yv=1;
+            break;
+        case 82:
+            tail =5;
             break;
     }
 }
